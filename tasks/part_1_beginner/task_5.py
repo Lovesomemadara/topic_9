@@ -1,8 +1,3 @@
-'''stroke: str = input()
-spr: str = input() or '-'
-output = spr.join(stroke)
-print(output)'''
-
 stroke: str = input()
 inp_spr = input() or '-'
 output = ''

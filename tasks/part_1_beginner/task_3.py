@@ -1,5 +1,7 @@
 stroke: str = input()
 
+is_printed: bool = False
+
 for i in range(len(stroke)):
     if stroke[i] == ' ':
         continue

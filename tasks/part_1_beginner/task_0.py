@@ -1,6 +1,6 @@
 word: str = input()
-count: int = 0
 
-for i in word:
+count: int = 0
+for _ in word:
     count += 1
 print(count)

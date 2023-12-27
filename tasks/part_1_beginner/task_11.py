@@ -1,5 +1,7 @@
 stroke: str = input().strip()
 
+is_num: bool = True
+
 if stroke.startswith("+") or stroke.startswith("-"):
     stroke = stroke[1:]
 
@@ -14,3 +16,5 @@ else:
         print(True)
     else:
         print(False)
+
+print(is_num)

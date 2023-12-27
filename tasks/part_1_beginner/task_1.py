@@ -1,8 +1,8 @@
-stroke: str = input()
-unique_stroke: str = ''
+line: str = input()
 
-for i in stroke:
-    if i not in unique_stroke:
-        unique_stroke += i
+unique_chars: str = ''
+for char in line:
+    if char not in unique_chars:
+        unique_chars += char
 
-print(unique_stroke)
+print(unique_chars)
