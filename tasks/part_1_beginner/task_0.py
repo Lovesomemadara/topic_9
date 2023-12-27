@@ -1,1 +1,6 @@
-# TODO: Пожалуйста, добавьте свой код ниже с комментариями и понятными названиями переменных.
+word: str = input()
+count: int = 0
+
+for i in word:
+    count += 1
+print(count)

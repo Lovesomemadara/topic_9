@@ -1,1 +1,6 @@
-# TODO: Пожалуйста, добавьте свой код ниже с комментариями и понятными названиями переменных.
+stroke: str = input()
+nums: list = []
+
+for i in stroke:
+    nums.append(ord(i))
+print(max(nums))
