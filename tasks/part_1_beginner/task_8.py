@@ -1,6 +1,7 @@
-stroke: str = input()
-nums: list = []
+line: str = input()
+nums: str = ''
 
-for i in stroke:
-    nums.append(ord(i))
-print(max(nums))
+for char in line:
+    if char > nums:
+        nums = char
+print(ord(nums), nums, sep='\n')

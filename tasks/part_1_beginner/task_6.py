@@ -1,5 +1,3 @@
-stroke: str = input()
-even_char: str = ''
-odd_char: str = ''
+line: str = input()
 
-print(even_char + '\n' + odd_char)
+print(line[::2], line[1::2], sep='\n')

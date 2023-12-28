@@ -1,20 +1,25 @@
-stroke: str = input().strip()
+line: str = input()
 
+dot_count: int = 0
 is_num: bool = True
-
-if stroke.startswith("+") or stroke.startswith("-"):
-    stroke = stroke[1:]
-
-if "." in stroke:
-    if (stroke.count(".") == 1
-            and (stroke.replace(".", "")).isdigit()):
-        print(True)
+for char in line:
+    if char == '+' or char == '-' or char == ' ':
+        line = line[1:]
+        continue
+    if char == '.':
+        dot_count += 1
+        if dot_count > 1:
+            is_num = False
+            break
     else:
-        print(False)
-else:
-    if stroke.isdigit():
-        print(True)
-    else:
-        print(False)
-
+        if ord('0') <= ord(char) <= ord('9'):
+            is_num = True
+        else:
+            is_num = False
 print(is_num)
+
+
+
+
+
+

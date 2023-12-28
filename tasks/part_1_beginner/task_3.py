@@ -1,9 +1,9 @@
-stroke: str = input()
+line: str = input()
 
+final_line: str = ''
 is_printed: bool = False
-
-for i in range(len(stroke)):
-    if stroke[i] == ' ':
-        continue
-    substring = stroke[:i + 1]
-    print(substring)
+for char in line:
+    if is_printed or char != ' ':
+        is_printed = True
+        final_line += char
+        print(final_line)

@@ -1,9 +1,11 @@
-stroke: str = input()
+line: str = input()
 inp_spr = input() or '-'
+
 output = ''
-for i in range(len(stroke)):
-    if stroke[i] != inp_spr:
-        output += stroke[i]
-        if i != len(stroke) - 1:
+count: int = len(line)
+for char in range(count):
+    if line[char] != inp_spr:
+        output += line[char]
+        if char != count - 1:
             output += inp_spr
 print(output)
