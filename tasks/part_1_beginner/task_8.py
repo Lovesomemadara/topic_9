@@ -1,7 +1,7 @@
 line: str = input()
-nums: str = ''
 
-for char in line:
-    if char > nums:
-        nums = char
-print(ord(nums), nums, sep='\n')
+max_char: str = ''
+for curr_char in line:
+    if curr_char > max_char:
+        max_char = curr_char
+print(ord(max_char), max_char, sep='\n')
