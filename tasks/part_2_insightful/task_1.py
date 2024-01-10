@@ -1,1 +1,4 @@
-# TODO: Пожалуйста, добавьте свой код ниже с комментариями и понятными названиями переменных.
+string: str = input()
+
+word_count = string.split()
+print(len(word_count) or False)
