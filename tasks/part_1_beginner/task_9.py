@@ -7,3 +7,10 @@ for char in input():
         is_word = True
         word_count += 1
 print(word_count)
+
+# -------------------------
+
+# if char == ' ' and is_word:
+#     is_word = False
+# elif char != ' ' and not is_word:
+#     is_word = True
