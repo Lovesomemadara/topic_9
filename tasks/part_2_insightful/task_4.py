@@ -1,10 +1,15 @@
 string: str = input()
 
-words: list = string.split()
-camel_case: str = ''.join(word.capitalize() for word in words)
-pascal_case: str = ''.join(word.capitalize() for word in words)
-snake_case: str = '_'.join(words).lower()
+# Option 2
+# words: list[str, ...] = string.title().split()
+# base_camel_and_pascal: str = ''.join(words)
 
-print('camel' + camel_case,
-      'Pascal' + pascal_case,
-      'snake_' + snake_case, sep='\n')
+
+words: list[str, ...] = string.split()
+base_camel_and_pascal: str = ''.join(word.capitalize() for word in words)
+
+camel_case: str = 'camel' + base_camel_and_pascal
+pascal_case: str = 'Pascal' + base_camel_and_pascal
+snake_case: str = 'snake_' + '_'.join(words).lower()
+
+print(camel_case, pascal_case, snake_case, sep='\n')
