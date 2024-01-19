@@ -1,4 +1,4 @@
-string: str = input()
+line: str = input()
 
-word_count: list[str, ...] = string.split()
+word_count: list[str, ...] = line.split()
 print(len(word_count) or False)

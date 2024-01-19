@@ -46,10 +46,10 @@ s: bytes = (
 
 # print(s.decode(encoding='UTF-8'))
 
-string: str = input()
+line: str = input()
 clean_string: str = ''.join(
     char.lower()
-    for char in string if char.isalnum()
+    for char in line if char.isalnum()
 )
 
 print(clean_string == clean_string[::-1])

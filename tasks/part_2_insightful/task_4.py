@@ -1,11 +1,11 @@
-string: str = input()
+line: str = input()
 
 # Option 2
 # words: list[str, ...] = string.title().split()
 # base_camel_and_pascal: str = ''.join(words)
 
 
-words: list[str, ...] = string.split()
+words: list[str, ...] = line.split()
 base_camel_and_pascal: str = ''.join(word.capitalize() for word in words)
 
 camel_case: str = 'camel' + base_camel_and_pascal

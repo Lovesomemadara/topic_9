@@ -1,4 +1,4 @@
-string: str = input()
+line: str = input()
 
-for word in string.split('*'):
+for word in line.split('*'):
     print(word.capitalize())
