@@ -1,9 +1,9 @@
-line: list[str, ...] = input().split()
+names: list[str, ...] = input().split()
 
 max_vowel_count: int = 0
 max_vowel_names: list[str, ...] = []
 
-for name in line:
+for name in names:
     vowel_count: int = 0
     for char in name:
         if char.lower() in 'aeiouаоуыэеёиюя':
@@ -11,8 +11,11 @@ for name in line:
 
     if vowel_count > max_vowel_count:
         max_vowel_count = vowel_count
-        max_vowel_names = [name]
+        max_vowel_names.clear()
+        max_vowel_names.append(name)
     elif vowel_count == max_vowel_count:
         max_vowel_names.append(name)
+
+
 for name in max_vowel_names:
     print(name.capitalize())

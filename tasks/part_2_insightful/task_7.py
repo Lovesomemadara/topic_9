@@ -1,3 +1,5 @@
+digits: tuple[str, ...] = tuple('0123456789')
+
 while True:
     line: str = input('Введите пароль: ')
 
@@ -6,19 +8,20 @@ while True:
     elif len(line) > 255:
         print('Пароль не может быть больше 255 символов')
     elif line.isdigit():
-        print('Пароль не должен состоять только из цифр.')
+        print('Пароль не должен состоять только из цифр')
     elif not line[-1].isalnum():
-        print('Пароль должен заканчиваться буквой или цифрой.')
-    elif line[0].isdigit():
-        print('Пароль не может начинаться с цифры.')
+        print('Пароль должен заканчиваться буквой или цифрой')
+    elif line.startswith(digits):
+        print('Пароль не может начинаться с цифры')
     elif line.isalpha():
-        print('Пароль не должен состоять только из буквенных символов.')
+        print('Пароль не должен состоять только из буквенных символов')
+
     elif line.isalnum():
         add_special_chars: str = input(
             "ПРЕДУПРЕЖДЕНИЕ: Ваш пароль состоит только из букв и цифр "
             "Хотите добавить специальные символы?(y/n): "
         ).lower()
-        if add_special_chars == 'n':
+        if add_special_chars != 'y':
             break
     else:
         break
