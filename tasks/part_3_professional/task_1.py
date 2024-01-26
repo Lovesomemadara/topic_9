@@ -1,5 +1,6 @@
 line: str = input()
 
-delimiter: str = '~' * 5
+delimeter_count: int = 10
+char_length: int = len(line)
 
-print(f'{line:~^{len(line) + len(delimiter) * 2}}')
+print(f'{line:~^{char_length + delimeter_count}}')
