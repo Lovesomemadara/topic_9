@@ -1,6 +1,6 @@
-line: str = input()
+line: str = input().strip()
 vowels: str = 'aeiouAEIOUаоуыэеёиюяАОУЫЭЕЁИЮЯ'
 replace: str = '?' * 30
-remove: str = 'T'
+correct_line: dict[int, str | None] = line.maketrans(vowels, replace)
 
-print(''.join(['?' if char in vowels else char for char in line]))
+print(line.translate(correct_line))

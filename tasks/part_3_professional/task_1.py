@@ -2,4 +2,4 @@ line: str = input()
 
 delimiter: str = '~' * 5
 
-print(f'{delimiter}{line}{delimiter}')
+print(f'{line:~^{len(line) + len(delimiter) * 2}}')
