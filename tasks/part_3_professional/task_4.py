@@ -1,6 +1,11 @@
 HEADER: list[str, ...] = ['Дети до 2-х лет', 'Дети от 3-х до 12 лет',
                           'Взрослые', 'Пенсионеры']
 
+BETWEEN_PRICE: int = 1055
+PENSIONERS_PRICE: int = 1449
+ADULTS_PRICE: int = 2099
+HEAD_TEMPLATE: str = '{:<20}{:<25}{:<20}{:<20}'
+
 ages: list[str, ...] = input(
     'Введите возрасты посетителей через пробел: '
 ).split()
@@ -9,12 +14,6 @@ under_two_count: int = 0
 between_age_count: int = 0
 adults_count: int = 0
 pensioners_count: int = 0
-
-BETWEEN_PRICE: int = 1055
-PENSIONERS_PRICE: int = 1449
-ADULTS_PRICE: int = 2099
-
-head_template: str = '{:<20}{:<25}{:<20}{:<20}'
 
 for i, age in enumerate(ages):
     age: int = int(age)
@@ -32,8 +31,8 @@ age_rate: list[int, ...] = [under_two_count,
                             adults_count,
                             pensioners_count]
 
-print(head_template.format(*HEADER))
-print(head_template.format(*age_rate))
+print(HEAD_TEMPLATE.format(*HEADER))
+print(HEAD_TEMPLATE.format(*age_rate))
 
 total_cost: int = (
         (between_age_count * BETWEEN_PRICE)
