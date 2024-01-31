@@ -10,8 +10,11 @@ between_age_count: int = 0
 adults_count: int = 0
 pensioners_count: int = 0
 
-# 1. Вынести в общий шаблон.
-print('{:<20}{:<25}{:<20}{:<20}'.format(*HEADER))
+BETWEEN_PRICE: int = 1055
+PENSIONERS_PRICE: int = 1449
+ADULTS_PRICE: int = 2099
+
+head_template: str = '{:<20}{:<25}{:<20}{:<20}'
 
 for i, age in enumerate(ages):
     age: int = int(age)
@@ -24,14 +27,18 @@ for i, age in enumerate(ages):
     if age >= 65:
         pensioners_count += 1
 
-print(f'{under_two_count:<20}{between_age_count:<25}'
-      f'{adults_count:<20}{pensioners_count:<20}')
+age_rate: list[int, ...] = [under_two_count,
+                            between_age_count,
+                            adults_count,
+                            pensioners_count]
 
-# 2. Цены вынести в константы.
+print(head_template.format(*HEADER))
+print(head_template.format(*age_rate))
+
 total_cost: int = (
-        (between_age_count * 1055)
-        + (adults_count * 2099)
-        + (pensioners_count * 1449)
+        (between_age_count * BETWEEN_PRICE)
+        + (adults_count * ADULTS_PRICE)
+        + (pensioners_count * PENSIONERS_PRICE)
 )
 
-print(f'\nОбщая стоимость билетов: {total_cost:,.0f}₽')
+print(f'\nОбщая стоимость билетов: {total_cost:,}₽')
