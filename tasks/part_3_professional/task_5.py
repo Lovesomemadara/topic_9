@@ -1,27 +1,3 @@
-# HEADER: list[str, ...] = ['№', 'ФИО']
-#
-# names: list[str, ...] = []
-#
-# while True:
-#     name: str = input().strip()
-#     if name.lower() == 'end':
-#         break
-#     names.append(name)
-#
-# lines: list[str, ...] = []
-#
-# for i, name in enumerate(names, start=1):
-#     initials: str = '.'.join([part[0] for part in name.split()[1:]])
-#     full_name: str = f'{name.split()[0].capitalize()} {initials.upper()}'
-#     line: str = f'{i:02} | {full_name}'
-#     lines.append(line)
-#
-# print(' {:<9}{:<10}'.format(*HEADER))
-# for line in lines:
-#     print(line + '.')
-
-# --------------------------------------------------------
-
 HEADER: list[str, ...] = ['№', 'ФИО']
 NUM_SYMBOL: str = '№'
 FIO_SYMBOL: str = 'ФИО'
@@ -39,7 +15,10 @@ while True:
     if surname_len > max_width:
         max_width = surname_len
 
-    full_name: str = (f'{counter:0>2} | {surname.capitalize()} '
+    # Обработка двойных фамилий
+    # surname = '-'.join(part.capitalize() for part in surname.split('-'))
+
+    full_name: str = (f'{counter:0>2} | {surname} '
                       f'{name[0].upper()}.{patronymic[0].upper()}.')
     counter += 1
 
