@@ -6,6 +6,6 @@ for _ in range(4):
     ip = octet + '.' + ip
     decimal_ip = decimal_ip // 256
 
-ip = ip.rstrip('.')
+ip = ip.rstrip('.')  # лучше использовать join.
 
 print(ip)

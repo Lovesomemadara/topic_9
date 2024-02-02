@@ -1,23 +1,15 @@
+MENU: list[str, ...] = [
+    'burger', 'fries', 'chicken',
+    'pizza', 'sandwich', 'onionrings',
+    'milkshake', 'coke'
+]
+
 order: str = input()
 
-menu: dict = {
-    'burger': 'Burger',
-    'fries': 'Fries',
-    'chicken': 'Chicken',
-    'pizza': 'Pizza',
-    'sandwich': 'Sandwich',
-    'onionrings': 'Onionrings',
-    'milkshake': 'Milkshake',
-    'coke': 'Coke'
-}
+result: list[str, ...] = []
+for item in MENU:
+    while item in order:
+        result.append(item.capitalize())
+        order = order.replace(item, '', 1)
 
-result: str = ''
-word: str = ''
-
-for char in order:
-    word += char
-    if word in menu:
-        result += menu[word] + ' '
-        word = ''
-
-print(result.strip())
+print(' '.join(result))

@@ -1,4 +1,4 @@
-ip: list = str(input()).split('.')
+ip: list = input().split('.')
 
 decimal_ip: int = 0
 error_flag: bool = False
@@ -12,3 +12,11 @@ for num in ip:
 
 if not error_flag:
     print(decimal_ip)
+
+# ------------------------------------
+
+# bin()[2:]
+# int('1001', 2)
+for num in ip:
+    pass
+
