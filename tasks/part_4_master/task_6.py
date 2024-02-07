@@ -6,5 +6,8 @@ for i in range(len(line)):
         if line[i] == line[j]:
             is_unique = False
             break
-
-print(is_unique)
+    if not is_unique:
+        print(is_unique)
+        break
+else:
+    print(is_unique)

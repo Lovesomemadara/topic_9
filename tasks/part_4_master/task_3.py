@@ -1,4 +1,4 @@
-decimal_ip: int = (int(input()))
+# decimal_ip: int = (int(input()))
 
 # ip: list[str, ...] = []
 # for _ in range(4):
@@ -16,15 +16,15 @@ decimal_ip: int = (int(input()))
 #     octets.append(int(decimal_ip, 2))
 # print(octets)
 
-binary_octets: str = bin(decimal_ip)[2:]
-sub_octets = [
-    binary_octets[i:i+8]
-    for i in range
-    (0, len(binary_octets), 8)
+# Option 2
+# ----------------------------------
+decimal_ip: int = (int(input()))
+
+binary_octets: str = bin(decimal_ip)[2:].zfill(32)
+ip: list[str, ...] = [
+    str(int(binary_octets[i:i + 8], 2))
+    for i in range(0, 32, 8)
 ]
+ip_address: str = '.'.join(ip)
 
-ip = [int(sub_octet, 2) for sub_octet in sub_octets]
-
-joined_string = '.'.join([str(number) for number in ip])
-
-print(joined_string)
+print(ip_address)
